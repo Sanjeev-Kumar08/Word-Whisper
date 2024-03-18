@@ -58,10 +58,11 @@ function Post() {
         {console.log(`Post: ${post.title}`)} 
         */}
 
+        <h1 className='text-gray-700 font-verdana text-3xl font-bold m-4'>{post.title}</h1>
 
         {/* Image and Edit/Delete Button */}
         <div className='mt-2'>
-          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-3xl w-1/2"/>
+          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-3xl w-2/6 m-2"/>
           {isAuthor && (
             <div>
               <Link to={`/edit-post/${post.$id}`}>
@@ -86,9 +87,7 @@ function Post() {
         {/* Title & Content */}
 
         <div>
-          <h1 className='text-gray-700 font-verdana text-3xl font-bold'>{post.title}</h1>
-
-          <div className='text-black rounded-lg py-2'>
+          <div className='text-black rounded-lg py-2 m-2'>
             {parse(post.content)}
           </div>
         </div>
