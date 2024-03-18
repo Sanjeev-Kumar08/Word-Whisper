@@ -6,6 +6,7 @@ The Blog App is a web application built using React.js, Tailwind CSS, Redux-Tool
 
 
 **Features**
+
 **Authentication:** Users can sign up and log in to access the blog features. Only logged-in users can view, create, edit, and delete posts.
 
 **User Authorization:** Users can only edit or delete the posts they have created. They cannot modify posts created by other users.
@@ -18,6 +19,7 @@ The Blog App is a web application built using React.js, Tailwind CSS, Redux-Tool
 
 
 **Technologies Used**
+
 React.js
 
 Tailwind CSS
@@ -36,6 +38,7 @@ appwrite (Backend-as-a-Service)
 
 
 **Installation**
+
 Clone the repository: git clone <repository-url>
 
 Navigate to the project directory: cd blog-app
@@ -48,6 +51,7 @@ Start the development server: npm start
 
 
 **Usage**
+
 Sign up or log in to access the blog features.
 
 Create new blog posts by providing a title, feature image, and content.
@@ -60,6 +64,7 @@ View posts created by other users on the homepage.
 
 
 **Deployment**
+
 The application can be deployed to various hosting platforms like Netlify, Vercel, or Firebase. Configure the deployment settings according to the chosen platform and deploy the application.
 
 
