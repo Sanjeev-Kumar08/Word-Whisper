@@ -26,7 +26,7 @@ function App() {
   } ,[])
 
   if(!loading){ // Data has been Loaded . then Display it on the page
-    return <div className="text-red-500 flex flex-col">
+    return <div className="text-gray-600 flex flex-col">
       {/* <h1>Welcome to Our App</h1> */}
       <Header/>
       <Outlet/>
