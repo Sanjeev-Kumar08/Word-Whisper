@@ -41,7 +41,7 @@ appwrite (Backend-as-a-Service)
 
 Clone the repository: git clone <repository-url>
 
-Navigate to the project directory: cd blog-app
+Navigate to the project directory: cd Word-Whisper
 
 Install dependencies: npm install
 
