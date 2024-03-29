@@ -1,8 +1,8 @@
-**Blog App**
+**Word Whisper**
 
 
 **Overview**
-The Blog App is a web application built using React.js, Tailwind CSS, Redux-Toolkit, React-Hook-Form, React-Router, TinyMCE Editor, html-react-parser, and appwrite as the Backend-as-a-Service (BAAS) solution.     It allows users to sign up, log in, create, edit, and delete their blog posts. Users can only view posts created by others but cannot edit or delete them.
+The Word Whisper is a web application built using React.js, Tailwind CSS, Redux-Toolkit, React-Hook-Form, React-Router, TinyMCE Editor, html-react-parser, and appwrite as the Backend-as-a-Service (BAAS) solution.     It allows users to sign up, log in, create, edit, and delete their blog posts. Users can only view posts created by others but cannot edit or delete them.
 
 
 **Features**
