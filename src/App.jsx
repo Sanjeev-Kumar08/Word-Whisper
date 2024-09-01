@@ -25,16 +25,24 @@ function App() {
     .finally(()=>setLoading(false))
   } ,[])
 
-  if(!loading){ // Data has been Loaded . then Display it on the page
+
+
+  if(!loading){ 
     return <div className="text-gray-600 flex flex-col">
-      {/* <h1>Welcome to Our App</h1> */}
       <Header/>
       <Outlet/>
       <Footer/>
     </div>
   }
   else{
-    return <h1 className="text-center mt-20">Loading Content... Please Wait</h1>
+    return <div className="flex justify-center items-center h-screen bg-gray-100">
+    <div className="bg-white shadow-lg rounded-lg p-6 max-w-sm w-full">
+      <h1 className="text-center text-xl font-semibold text-gray-800">
+        Welcome to our App!
+      </h1>
+    </div>
+  </div>
+  
   }
 }
 

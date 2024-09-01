@@ -27,18 +27,11 @@ function PostForm({post}) {
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);    
     const userStatus = useSelector(state => state.auth.status)
-    console.log(post)
 
     // Submit.... (1: User is Updating the Post or 2: User is Creating New Post)
     const submit = async(data) => { // Data is the thing that a user have given while adding or updating post
-      console.log(`Post Submission Test!!`)
-      console.log(data)
-      console.log(userStatus)
-
       // *******User is Updating post (post already exist)********
         if(post){
-          console.log(`User Data : ${userData}`)
-          console.log(`post Exists`)
             // Take the image from the user and Upload it to the Appwrite Service if it exits (user has entered the image)
             const file = data.featureImage[0] ? await service.uploadFile(data.featureImage[0]) : null;
 
@@ -80,7 +73,7 @@ function PostForm({post}) {
          }
         }
     }
-
+    
     // "     THis is My bloG        "  => "this-is-my-blog"     
     const createSlug = useCallback((title) => {
       if(title && typeof title === 'string') 
@@ -158,7 +151,6 @@ function PostForm({post}) {
             className="rounded-lg"
             />
           </div>
-          // <div>Post Exists</div>
         )}
 
           {/* Status of the Post : Active or In-Active */}

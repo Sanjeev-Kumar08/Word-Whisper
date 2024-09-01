@@ -17,10 +17,6 @@ import SignUpPage from './Pages/SignUpPage.jsx'
 import LogInPage from './Pages/LogInPage.jsx'
 import ALLPosts from './Pages/ALLPosts.jsx'
 
-// Sample
-import One from './SampleComponent/One.jsx'
-import SampleWrapper from './SampleComponent/SampleWrapper.jsx'
-
 
 const router = createBrowserRouter([
 
@@ -35,7 +31,6 @@ const router = createBrowserRouter([
       {
         path: "/login",
         element: (
-          // <LogInPage/>
           <CheckAuth authentication = "false">
             <LogInPage/>
           </CheckAuth>
@@ -53,7 +48,6 @@ const router = createBrowserRouter([
       {
         path: "/edit-post/:slug",
         element: (
-          // <EditPost/>
           <CheckAuth authentication>
             <EditPost/>
           </CheckAuth>
@@ -62,7 +56,6 @@ const router = createBrowserRouter([
       {
         path: "/add-post",
         element: (
-          // <AddPost/>
           <CheckAuth authentication>
             <AddPost/>
           </CheckAuth>
@@ -71,7 +64,6 @@ const router = createBrowserRouter([
       {
         path: "/all-posts",
         element: (
-          // <ALLPosts/>
           <CheckAuth authentication>
             <ALLPosts/>
           </CheckAuth>
@@ -81,20 +73,6 @@ const router = createBrowserRouter([
         path: "/post/:slug",
         element: <Post/>
       },
-      {
-        path : "sample",
-        element: (
-          <SampleWrapper>
-            hey
-          </SampleWrapper>
-        )
-      },
-      {
-        path: "one",
-        element : <CheckAuth authentication = "false">
-          <One/>
-        </CheckAuth>
-      }
     ]
   }
   

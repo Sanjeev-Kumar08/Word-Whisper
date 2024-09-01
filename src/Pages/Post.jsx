@@ -11,7 +11,6 @@ function Post() {
     const [post , setPost] = useState(null);
     const navigate = useNavigate();
     const {slug} = useParams(); // get the slug parameter from the URL.
-    console.log(slug)
 
     const userData = useSelector((state) => state.auth.userData);
 
@@ -49,15 +48,6 @@ function Post() {
   return post ? (
     <div className='w-full'>
       <Container>
-        {/* Image, Title,  Content, if(user is author){display Edit Button & Delete Button}*/}
-
-        {/* Sample Consol.log's 
-        {console.log(`User ID : ${userData.$id}`)}
-        {console.log(`Author is: ${isAuthor}`)}
-        {console.log(`Post Id (Slug): ${post.userId}`)}
-        {console.log(`Post: ${post.title}`)} 
-        */}
-
         <h1 className='text-gray-700 font-verdana text-3xl font-bold m-4'>{post.title}</h1>
 
         {/* Image and Edit/Delete Button */}
