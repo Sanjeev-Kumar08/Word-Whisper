@@ -21,9 +21,9 @@ function CheckAuth({children , authentication = "true"}) {
                 console.log("Log In Page is CLicked")
                 navigate("/login")
             }
-            else{
-                navigate("/login")
-            }
+            // else{
+            //     navigate("/login")
+            // }
         }
         setLoader(false)
     } , [authStatus, navigate, authentication])
