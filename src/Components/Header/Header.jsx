@@ -49,13 +49,11 @@ function Header() {
     <Container>
       <nav className='w-full flex justify-center items-center'>
        
-          {/* LOGO */}
           <Link to="/">
             <Logo/>
           </Link>
 
 
-        {/* Ul Items (Buttons : Home , Sign-Up etc) */}
         <ul className='flex ml-auto items-center'>
           {
           navItems.map((item) => 
@@ -64,8 +62,8 @@ function Header() {
               <NavLink 
               to={item.slug} 
               className={`px-6 py-2 duration-200 
-              hover:shadow-white text-white font-semibold text-lg rounded-full transition-all ease-in-out ${
-                location.pathname === item.slug ? "bg-red-500 text-orange-700" : "text-gray-700"
+              hover:shadow-white text-white text-lg rounded-full transition-all ease-in-out ${
+                location.pathname === item.slug ? "bg-red-600 font-semibold" : "text-white"
               }`}
               >
               {item.name}
@@ -75,7 +73,6 @@ function Header() {
           )
           }
     
-    {/* If user is Authenticated (Logged-IN) Then only Show him the Log Out Button */}
           {authStatus && (
             <li>
               <LogoutBtn />

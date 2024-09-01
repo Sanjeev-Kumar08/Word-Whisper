@@ -18,16 +18,6 @@ function LogIn() {
     const [error , setError] = useState("");
 
     const login = async(data)=>{
-        // const userEmail = data.email;
-        // const userPassword = data.password;
-        // console.log(`User Data: ${userEmail} : ${userPassword}}`)
-
-        // const userData = {
-        //     email: userEmail,
-        //     password: userPassword
-        // }
-
-        console.log(`LogIn Button Clicked`)
         setError("");
         try {
             // If user log in, then first Create a Log-In session. 
@@ -45,7 +35,9 @@ function LogIn() {
                 // userData ? dispatch(storeLogin(userData)) :  console.log('Failed to fetch the current user data');
 
                 // If all done Successfuly Navigate the User to the Page.
-                navigate('/');
+                console.log('Naviagte to Home Page')
+                navigate("/")
+
             }
         } catch (error) {
             setError(error.message);
@@ -56,7 +48,6 @@ function LogIn() {
     <div className='flex items-center justify-center w-full'>
         <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
 
-        {/* Logo-Div */}
         <div className="mb-2 flex justify-center">
             <span className="inline-block w-full max-w-[100px]">
                 <Logo width='100%'/>
@@ -74,13 +65,10 @@ function LogIn() {
             </Link>
         </p>
         
-        {/* Display Error */}
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-{/* Form Here */}
         <form onSubmit={handleSubmit(login)} className='mt-8'>
 
-            {/* Input Field for Enter Email*/}
             <Input
             label = "Email"
             type = "email"
@@ -95,8 +83,6 @@ function LogIn() {
             })}
             required = "true"
             />
-
-            {/* Input Field for Enter Password*/}
             <Input
             label= "Password"
             type="password"
@@ -110,7 +96,7 @@ function LogIn() {
             <Button
             buttonText="Log-In"
             type='submit'
-            className='w-full hover:bg-blue-700'
+            className='w-full hover:bg-green-700'
             />
         </form>
         </div>

@@ -107,7 +107,7 @@ function SignUp() {
             <Button 
             type='submit'
             buttonText = "Create Account"
-            className='w-full hover:bg-blue-700'
+            className='w-full hover:bg-green-700'
             />
         </div>
         </form>

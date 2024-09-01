@@ -10,9 +10,7 @@ function CheckAuth({children , authentication = "true"}) {
     const navigate = useNavigate();
 
     useEffect(()=>{
-
-        // false && (false === false) => true && false => false
-        if(!(authentication && (authStatus === authentication))){
+        if((authentication && (authStatus === authentication))){
             if(children.type.name == "SignUpPage"){
                 navigate("/signup")
             }

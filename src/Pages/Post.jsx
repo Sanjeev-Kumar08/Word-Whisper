@@ -48,11 +48,15 @@ function Post() {
   return post ? (
     <div className='w-full'>
       <Container>
-        <h1 className='text-gray-700 font-verdana text-3xl font-bold m-4'>{post.title}</h1>
+      <h1 className="text-3xl font-sans font-semibold m-4 text-red-500 bg-clip-text"
+      style={{ textShadow: '3px 2px 2px rgba(150, 0, 0, 0.3)' }}
+      >
+        {post.title}
+      </h1>
 
-        {/* Image and Edit/Delete Button */}
-        <div className='mt-2'>
-          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-3xl w-2/6 m-2"/>
+
+        <div className='mt-5'>
+          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-2xl w-2/6 m-2 shadow-gray-400 shadow-md"/>
           {isAuthor && (
             <div>
               <Link to={`/edit-post/${post.$id}`}>
@@ -74,10 +78,8 @@ function Post() {
           )}
         </div>
 
-        {/* Title & Content */}
-
         <div>
-          <div className='text-black rounded-lg py-2 m-2'>
+          <div className='text-black rounded-lg py-2 m-2 mt-5'>
             {parse(post.content)}
           </div>
         </div>
