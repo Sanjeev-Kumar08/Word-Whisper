@@ -14,16 +14,11 @@ function CheckAuth({children , authentication = "true"}) {
         // false && (false === false) => true && false => false
         if(!(authentication && (authStatus === authentication))){
             if(children.type.name == "SignUpPage"){
-                console.log("Sign Up Page is CLicked")
                 navigate("/signup")
             }
             else if(children.type.name == "LogInPage"){
-                console.log("Log In Page is CLicked")
                 navigate("/login")
             }
-            // else{
-            //     navigate("/login")
-            // }
         }
         setLoader(false)
     } , [authStatus, navigate, authentication])

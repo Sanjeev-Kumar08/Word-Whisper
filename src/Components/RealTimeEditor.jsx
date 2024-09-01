@@ -17,6 +17,7 @@ function RealTimeEditor({name, control,  label, defaultValue="Write Your Blog He
        */
       render={({field : {onChange}}) => (
         <Editor
+        apiKey='u7tc0pbxux161770fam38w9r2ty10lkploh12md603416hc4'
         initialValue={defaultValue}
         init={{
             initialValue: defaultValue,
