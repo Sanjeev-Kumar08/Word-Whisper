@@ -67,7 +67,7 @@ function LogIn() {
         
         {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
 
-        <form onSubmit={handleSubmit(login)} className='mt-8'>
+        <form onSubmit={handleSubmit(login)} className='mt-8 space-y-5'>
 
             <Input
             label = "Email"
@@ -96,7 +96,7 @@ function LogIn() {
             <Button
             buttonText="Log-In"
             type='submit'
-            className='w-full hover:bg-green-700'
+            className='w-full hover:bg-green-600'
             />
         </form>
         </div>

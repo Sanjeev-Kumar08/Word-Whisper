@@ -46,9 +46,9 @@ function Post() {
     }
 
   return post ? (
-    <div className='w-full'>
+    <div className='w-full bg-white'>
       <Container>
-      <h1 className="text-3xl font-sans font-semibold m-4 text-red-500 bg-clip-text"
+      <h1 className="text-4xl font-sans font-semibold m-4 text-red-500 bg-clip-text"
       style={{ textShadow: '3px 2px 2px rgba(150, 0, 0, 0.3)' }}
       >
         {post.title}
@@ -58,20 +58,19 @@ function Post() {
         <div className='mt-5'>
           <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-2xl w-2/6 m-2 shadow-gray-400 shadow-md"/>
           {isAuthor && (
-            <div>
+            <div className='mt-5 ml-2'>
               <Link to={`/edit-post/${post.$id}`}>
                 <Button
                   buttonText="Edit"
                   bgColor="bg-green-500"
-                  className="mr-2 hover:bg-green-600"
+                  className="mr-3 px-5 hover:bg-green-600"
                 />
               </Link>
 
               <Button
-                bgColor="bg-red-500" 
                 buttonText = "Delete"
                 onClick={deletePost}
-                className='bg-red-500 hover:bg-red-600'
+                className='px-4 bg-red-500 hover:bg-red-600'
                 title="Delete Permanently"
               />
             </div>
@@ -79,7 +78,7 @@ function Post() {
         </div>
 
         <div>
-          <div className='text-black rounded-lg py-2 m-2 mt-5'>
+          <div className='text-black rounded-lg py-2 m-2 mt-1'>
             {parse(post.content)}
           </div>
         </div>

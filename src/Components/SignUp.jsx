@@ -39,7 +39,7 @@ function SignUp() {
 
   return (
     <div className='flex items-center justify-center w-full'>
-        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-xl p-10 border border-black/10`}>
+        <div className={`mx-auto w-full max-w-lg bg-gray-100 rounded-lg p-10 border shadow-sm shadow-black/20 border-black/10`}>
 
         {/* Logo-Div */}
         <div className="mb-2 flex justify-center">
@@ -60,15 +60,15 @@ function SignUp() {
             </Link>
         </p>
 
-        {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
+        {error && <p className="text-red-600 mt-8 text-center font-semibold">{error}</p>}
 
         {/* Form */}
         <form onSubmit={handleSubmit(signUp)} className='mt-8'>
 
-        <div className='space-y-5'>
+        <div className='space-y-4'>
             {/* Enter Name */}
             <Input
-            label = "Full Name: "
+            label = "Full Name "
             type = "text"
             placeholder="Enter your Name"
             {...register("text", {
@@ -107,7 +107,7 @@ function SignUp() {
             <Button 
             type='submit'
             buttonText = "Create Account"
-            className='w-full hover:bg-green-700'
+            className='w-full hover:bg-green-600'
             />
         </div>
         </form>

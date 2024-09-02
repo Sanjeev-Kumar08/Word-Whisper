@@ -165,7 +165,7 @@ function PostForm({post}) {
         <Button
           buttonText= {post ? "Update" : "Submit"}
           type='submit'
-          className='w-full hover:bg-blue-700'
+          className='w-full hover:bg-green-600'
         />
       </div>
     </form>

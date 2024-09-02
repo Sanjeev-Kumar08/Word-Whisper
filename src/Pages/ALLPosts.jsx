@@ -17,7 +17,7 @@ function ALLPosts() {
     }, [])
 
   return (
-    <div className='flex flex-wrap'>
+    <div className='flex flex-wrap h-screen'>
         <div className='w-full py-8'>
         <Container>
             <div className='flex flex-wrap'>
@@ -30,12 +30,12 @@ function ALLPosts() {
                         )) 
                     ) : (
                         <Container>
-                        <div className="flex flex-wrap justify-center items-center h-screen">
+                            <div className="flex flex-wrap justify-center items-center h-screen">
                                 <div className="font-open-sans p-2 w-full">
-                                    <h1 className="text-4xl text-center text-red-600 font-bold mb-4 transition-colors duration-300">
-                                        No Post Available 
+                                    <h1 className="font-serif text-4xl text-center text-red-600 font-bold mb-4 transition-colors duration-300">
+                                        No Post Available!
                                     </h1> 
-                                    <h2 className="text-lg text-center text-black mb-8 transition-colors duration-300">Want To Write?
+                                    <h2 className="text-lg text-center text-black mb-8 transition-colors duration-300">Want to Write Some?
                                         <Link to="/add-post">
                                             <span className='ml-2 underline cursor-pointer text-blue-600 font-semibold'>Add Post</span>
                                         </Link>
