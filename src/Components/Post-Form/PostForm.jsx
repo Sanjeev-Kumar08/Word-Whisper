@@ -7,6 +7,7 @@ import RealTimeEditor from '../RealTimeEditor';
 import Input from '../Input';
 import Select from '../Select';
 import Button from '../Button';
+import Container from '../Container/Container';
 
 function PostForm({post}) {
 
@@ -98,70 +99,80 @@ function PostForm({post}) {
     } , [watch, createSlug, setValue])
 
   return (
-    <form onSubmit={handleSubmit(submit)} className='flex flex-wrap'>
-      {/* Left Div */}
-      <div className='w-2/3 px-2'>
+    <form onSubmit={handleSubmit(submit)}>
+
+      <div class="m-2 grid grid-cols-1 sm:grid-cols-12 gap-y-0 gap-x-5 rounded-lg p-2">
+
         {/* Title */}
-        <Input
-          label = "Title"
-          placeholder = "Enter Title Here"
-          className="mb-4"
-          {...register('title' , {required: true})}
-          onInput = {(e)=>{
-            setValue("slug" , createSlug(e.currentTarget.value, { shouldValidate: true }))
-          }}
-        />
-
-{/* The onInput event in JavaScript is triggered whenever the value of an input element changes. This event is similar to the onChange event, but it fires more frequently, even while the user is still typing or interacting with the input field. */}
-        {/* Slug */}
-        <Input
-          label ="Slug"
-          placeholder= "Slug..."
-          className = "mb-4"
-          {...register("slug" , {required: true})}
-        />
-
-        {/* Real Time Editor */}
-        <RealTimeEditor
-          label="Content" 
-          name="content" 
-          control={control} 
-          defaultValue={getValues("content")}
-        />
-
-      </div>
-      {/* Right Div */}
-      <div className='w-1/3 px-2'>
+        <div class="w-full rounded-lg sm:col-span-6">
+          <Input
+            label = "Title"
+            placeholder = "Enter Title Here"
+            className="mb-4"
+            {...register('title' , {required: true})}
+            onInput = {(e)=>{
+              setValue("slug" , createSlug(e.currentTarget.value, { shouldValidate: true }))
+            }}
+          />
+        </div>
 
         {/* Featured image */}
-        <Input
-          label = "Featured Image: "
-          type = "file"
-          accept = "image/png, image/jpg, image/jpeg"
-          {...register('featureImage' , {required : !post})}
-        />
-        { /*{required : !post}: checks if post is already available then there will be a featuredImage also so it is not compulsory for the user to upload a new FeaturedImage. But if post is false, means user is adding a newPost then featuredImage should be required!! */ }
+        <div class="w-full rounded-lg sm:col-span-6">
+          <Input
+            label = "Featured Image: "
+            type = "file"
+            accept = "image/png, image/jpg, image/jpeg"
+            {...register('featureImage' , {required : !post})}
+          />
+          { /*{required : !post}: checks if post is already available then there will be a featuredImage also so it is not compulsory for the user to upload a new FeaturedImage. But if post is false, means user is adding a newPost then featuredImage should be required!! */ }
+          {
+            post && (
+            <div className='sm:w-2/4 mb-4'>
+              <img 
+              src={service.getFilePreview(post.featureImage)}
+              alt={post.title}
+              className="rounded-lg"
+              />
+            </div>
+            )
+          }
+        </div>
 
-    {/* if post exists display the Featued Image of the Post  */}
-        {post && (
-          <div className='w-full mb-4'>
-            <img 
-            src={service.getFilePreview(post.featureImage)}
-            alt={post.title}
-            className="rounded-lg"
-            />
-          </div>
-        )}
+        {/* Slug */}
+        <div class="w-full rounded-lg sm:col-span-6">
+          {/* The onInput event in JavaScript is triggered whenever the value of an input element changes. This event is similar to the onChange event, but it fires more frequently, even while the user is still typing or interacting with the input field. */}
+          <Input
+            label ="Slug"
+            placeholder= "Slug..."
+            className = "mb-4"
+            {...register("slug" , {required: true})}
+          />
+        </div>
 
+        {/* Status and Submit */}
+        <div class="w-full rounded-lg sm:col-span-6">
           {/* Status of the Post : Active or In-Active */}
-        <Select
-          label = "Status"
-          options = {["active" , "inactive"]}
-          className = "mb-4"
-          {...register("status" , {required: true})}
-        />
+          <Select
+            label = "Status"
+            options = {["active" , "inactive"]}
+            className = "mb-4"
+            {...register("status" , {required: true})}
+          />
+        </div>
 
-          {/* Submit Button */}
+        {/* Real Time Editor */}
+        <div class="w-full rounded-lg sm:col-span-12">
+          <RealTimeEditor
+            label="Content" 
+            name="content" 
+            control={control} 
+            defaultValue={getValues("content")}
+          />
+        </div>
+      </div>
+
+      {/* Submit Button */}
+      <div className='sm:w-1/5 sm:mx-4 px-4 w-full'>
         <Button
           buttonText= {post ? "Update" : "Submit"}
           type='submit'

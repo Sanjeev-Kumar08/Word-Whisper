@@ -21,11 +21,11 @@ function Home() {
 
   if(posts.length > 0 && authStatus){
     return (
-        <div className='w-full py-8 h-screen'>
+        <div className='w-full py-8'>
             <Container>
-                <div className='flex flex-wrap'>
+                <div className='grid grid-cols-1 sm:grid-cols-3 justify-items-center items-center gap-4'>
                 {posts.map((post)=>(
-                    <div className='p-2 w-1/4' key={post.$id}>
+                    <div className='p-2 sm:w-full w-3/3' key={post.$id}>
                         <PostCard {...post}/>
                     </div>
                 ))}

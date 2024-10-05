@@ -45,7 +45,7 @@ function Header() {
   ]
 
   return (
-    <header className='py-3 shadow bg-gradient-to-r from-cyan-500 via-cyan-300 to-blue-500 border-b-2 border-gray-800'>
+    <header className='sm:py-3 py-5 shadow bg-gradient-to-r from-cyan-500 via-cyan-300 to-blue-500 border-b-2 border-gray-800'>
     <Container>
       <nav className='w-full flex justify-center items-center'>
        
@@ -56,21 +56,20 @@ function Header() {
 
         <ul className='flex ml-auto items-center'>
           {
-          navItems.map((item) => 
-           item.active ?
-            (<li className='m-4'  key={item.name}>
-              <NavLink 
-              to={item.slug} 
-              className={`px-6 py-2 duration-200 
-              hover:shadow-white text-white text-lg rounded-full transition-all ease-in-out ${
-                location.pathname === item.slug ? "bg-red-600 font-semibold" : "text-white"
-              }`}
-              >
-              {item.name}
-              </NavLink>
-            </li>)
-            : null
-          )
+            navItems.map((item) => 
+            item.active ?
+              (<li className='sm:m-4 m-0'  key={item.name}>
+                <NavLink 
+                  to={item.slug} 
+                  className={`sm:px-6 sm:py-2 px-4 py-2 text-white sm:text-lg text-md rounded-full ${
+                    location.pathname === item.slug ? "bg-red-600 font-semibold" : "transfrom transition-all duration-100 hover:border-b-2 hover:border-black hover:font-semibold ease"
+                  }`}
+                >
+                {item.name}
+                </NavLink>
+              </li>)
+              : null
+            )
           }
     
           {authStatus && (

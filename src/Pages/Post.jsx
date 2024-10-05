@@ -48,15 +48,14 @@ function Post() {
   return post ? (
     <div className='w-full bg-white'>
       <Container>
-      <h1 className="text-4xl font-sans font-semibold m-4 text-red-500 bg-clip-text"
-      style={{ textShadow: '3px 2px 2px rgba(150, 0, 0, 0.3)' }}
+      <h2 className="text-4xl font-serif font-semibold m-4 text-red-500 bg-clip-text"
+      // style={{ textShadow: '3px 2px 2px rgba(150, 0, 0, 0.3)' }}
       >
         {post.title}
-      </h1>
-
+      </h2>
 
         <div className='mt-5'>
-          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-2xl w-2/6 m-2 shadow-gray-400 shadow-md"/>
+          <img src={service.getFilePreview(post.featureImage)} alt={post.title} className="rounded-2xl sm:w-1/4 w-2/3 m-2 shadow-gray-400 shadow-md"/>
           {isAuthor && (
             <div className='mt-5 ml-2'>
               <Link to={`/edit-post/${post.$id}`}>
@@ -84,7 +83,9 @@ function Post() {
         </div>
       </Container>
     </div>
-  ) : <h1>No post Available</h1>
+  ) : <div className='bg-gray-300 h-screen'>
+      <h1>No post Available</h1>
+    </div>
 }
 
 export default Post
